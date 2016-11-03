@@ -3,7 +3,8 @@ PROJECT_DESCRIPTION = Release project for the EMQ Broker
 PROJECT_VERSION = 2.0-mios
 
 DEPS = \
-	   emqttd emq_dashboard \
+	   emqttd \
+	   emq_dashboard \
 	   emq_recon \
 	   emq_reloader \
 	   emq_stomp \
@@ -11,7 +12,17 @@ DEPS = \
 	   emq_mod_presence \
 	   emq_mod_retainer \
 	   emq_mod_subscription \
-	   emq_sn emq_coap \
+	   emq_sn \
+	   emq_coap \
+	   emq_plugin_template \
+	   emq_auth_clientid \
+	   emq_auth_username \
+	   emq_auth_ldap \
+	   emq_auth_http \
+	   emq_auth_mysql \
+	   emq_auth_pgsql \
+	   emq_auth_redis \
+	   emq_auth_mongo \
 	   emq_auth_mios
 
 # emq deps
@@ -28,15 +39,15 @@ dep_emq_mod_rewrite      = git https://github.com/emqtt/emq_mod_rewrite master
 dep_emq_mod_subscription = git https://github.com/emqtt/emq_mod_subscription master
 
 # emq auth/acl plugins
-# dep_emq_auth_clientid   = git https://github.com/emqtt/emq_auth_clientid master
-# dep_emq_auth_username   = git https://github.com/emqtt/emq_auth_username master
-# dep_emq_auth_ldap       = git https://github.com/emqtt/emq_auth_ldap master
-# dep_emq_auth_http       = git https://github.com/emqtt/emq_auth_http master
-# dep_emq_auth_mysql      = git https://github.com/emqtt/emq_auth_mysql master
-# dep_emq_auth_pgsql      = git https://github.com/emqtt/emq_auth_pgsql master
-# dep_emq_auth_redis      = git https://github.com/emqtt/emq_auth_redis master
-# dep_emq_auth_mongo      = git https://github.com/emqtt/emq_auth_mongo master
-# dep_emq_plugin_template = git https://github.com/emqtt/emq_plugin_template master
+dep_emq_auth_clientid   = git https://github.com/emqtt/emq_auth_clientid master
+dep_emq_auth_username   = git https://github.com/emqtt/emq_auth_username master
+dep_emq_auth_ldap       = git https://github.com/emqtt/emq_auth_ldap master
+dep_emq_auth_http       = git https://github.com/emqtt/emq_auth_http master
+dep_emq_auth_mysql      = git https://github.com/emqtt/emq_auth_mysql master
+dep_emq_auth_pgsql      = git https://github.com/emqtt/emq_auth_pgsql master
+dep_emq_auth_redis      = git https://github.com/emqtt/emq_auth_redis master
+dep_emq_auth_mongo      = git https://github.com/emqtt/emq_auth_mongo master
+dep_emq_plugin_template = git https://github.com/emqtt/emq_plugin_template master
 dep_emq_auth_mios       = git https://github.com/nvelozsavino/emq_auth_mios master
 
 # mqtt-sn and coap

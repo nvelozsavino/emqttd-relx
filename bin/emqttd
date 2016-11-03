@@ -25,11 +25,11 @@ RUNNER_LIB_DIR=$RUNNER_ROOT_DIR/lib
 RUNNER_ETC_DIR=$RUNNER_ROOT_DIR/etc
 RUNNER_DATA_DIR=$RUNNER_ROOT_DIR/data
 
-# Warn the user if ulimit -n is less than 1024
+# Warn the user if ulimit -n is less than 1048576
 ULIMIT_F=`ulimit -n`
 if [ "$ULIMIT_F" -lt 1048576 ]; then
     echo "!!!!"
-    echo "!!!! WARNING: ulimit -n is ${ULIMIT_F}; 1024 is the recommended minimum."
+    echo "!!!! WARNING: ulimit -n is ${ULIMIT_F}; 1048576 is the recommended minimum."
     echo "!!!!"
 fi
 

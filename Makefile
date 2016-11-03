@@ -6,7 +6,7 @@ DEPS = emqttd emqttd_dashboard emqttd_recon emqttd_reloader emqttd_stomp emqttd_
 	   emqttd_auth_http emqttd_auth_mysql emqttd_auth_pgsql emqttd_auth_redis \
 	   emqttd_auth_mongo emqttd_plugin_template emqttd_sn emqttd_coap emqttd_mios_plugin
 # emqttd
-dep_emqttd 			 = git https://github.com/emqtt/emqttd emq20
+dep_emqttd 			 = git https://github.com/nvelozsavino/emqttd emq20
 dep_emqttd_dashboard = git https://github.com/emqtt/emqttd_dashboard emq20
 dep_emqttd_recon     = git https://github.com/emqtt/emqttd_recon emq20
 dep_emqttd_reloader  = git https://github.com/emqtt/emqttd_reloader emq20

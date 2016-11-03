@@ -2,9 +2,8 @@ PROJECT = emqttd-relx
 PROJECT_DESCRIPTION = Release project for EMQ 2.0
 PROJECT_VERSION = 2.0
 
-DEPS = emqttd emqttd_dashboard emqttd_recon emqttd_reloader emqttd_stomp emqttd_auth_ldap \
-	   emqttd_auth_http emqttd_auth_mysql emqttd_auth_pgsql emqttd_auth_redis \
-	   emqttd_auth_mongo emqttd_sn emqttd_coap emqttd_mios_plugin
+DEPS = emqttd emqttd_dashboard emqttd_recon emqttd_reloader emqttd_stomp  \
+	   emqttd_sn emqttd_coap emqttd_mios_plugin
 # emqttd
 dep_emqttd 			 = git https://github.com/nvelozsavino/emqttd emq20
 dep_emqttd_dashboard = git https://github.com/emqtt/emqttd_dashboard emq20
@@ -13,13 +12,13 @@ dep_emqttd_reloader  = git https://github.com/emqtt/emqttd_reloader emq20
 dep_emqttd_stomp	 = git https://github.com/emqtt/emqttd_stomp emq20
 
 # emqttd auth plugins
-dep_emqttd_auth_ldap       = git https://github.com/emqtt/emqttd_auth_ldap emq20
-dep_emqttd_auth_http       = git https://github.com/emqtt/emqttd_auth_http emq20
-dep_emqttd_auth_mysql      = git https://github.com/emqtt/emqttd_auth_mysql emq20
-dep_emqttd_auth_pgsql      = git https://github.com/emqtt/emqttd_auth_pgsql emq20
-dep_emqttd_auth_redis      = git https://github.com/emqtt/emqttd_auth_redis emq20
-dep_emqttd_auth_mongo      = git https://github.com/emqtt/emqttd_auth_mongo emq20
-#dep_emqttd_plugin_template = git https://github.com/emqtt/emqttd_plugin_template emq20
+# dep_emqttd_auth_ldap       = git https://github.com/emqtt/emqttd_auth_ldap emq20
+# dep_emqttd_auth_http       = git https://github.com/emqtt/emqttd_auth_http emq20
+# dep_emqttd_auth_mysql      = git https://github.com/emqtt/emqttd_auth_mysql emq20
+# dep_emqttd_auth_pgsql      = git https://github.com/emqtt/emqttd_auth_pgsql emq20
+# dep_emqttd_auth_redis      = git https://github.com/emqtt/emqttd_auth_redis emq20
+# dep_emqttd_auth_mongo      = git https://github.com/emqtt/emqttd_auth_mongo emq20
+# dep_emqttd_plugin_template = git https://github.com/emqtt/emqttd_plugin_template emq20
 
 dep_emqttd_mios_plugin	   = git https://github.com/nvelozsavino/emqttd_mios_plugin.git master
 

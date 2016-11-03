@@ -3,11 +3,14 @@
 # ex: ts=4 sw=4 et
 
 set -e
+export RUN_ERL_LOG_GENERATIONS=2
+export RUN_ERL_LOG_MAXSIZE=536870912
 
 SCRIPT=$(readlink $0 || true)
 if [ -z $SCRIPT ]; then
     SCRIPT=$0
 fi;
+
 SCRIPT_DIR="$(cd `dirname "$SCRIPT"` && pwd -P)"
 RUNNER_ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd -P)"
 REL_NAME="emqttd"
@@ -24,7 +27,7 @@ RUNNER_DATA_DIR=$RUNNER_ROOT_DIR/data
 
 # Warn the user if ulimit -n is less than 1024
 ULIMIT_F=`ulimit -n`
-if [ "$ULIMIT_F" -lt 1024 ]; then
+if [ "$ULIMIT_F" -lt 1048576 ]; then
     echo "!!!!"
     echo "!!!! WARNING: ulimit -n is ${ULIMIT_F}; 1024 is the recommended minimum."
     echo "!!!!"

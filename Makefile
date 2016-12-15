@@ -2,6 +2,8 @@ PROJECT = emqttd-relx
 PROJECT_DESCRIPTION = Release project for the EMQ Broker
 PROJECT_VERSION = 2.0-mios
 
+prefix = /opt
+
 DEPS = \
 	   emqttd \
 	   emq_dashboard \
@@ -26,7 +28,7 @@ DEPS = \
 	   emq_auth_mios
 
 # emq deps
-dep_emqttd        = git https://github.com/nvelozsavino/emqttd master
+dep_emqttd        = git https://github.com/nvelozsavino/emqttd develop
 dep_emq_dashboard = git https://github.com/emqtt/emq_dashboard master
 dep_emq_recon     = git https://github.com/emqtt/emq_recon master
 dep_emq_reloader  = git https://github.com/emqtt/emq_reloader master
@@ -75,4 +77,21 @@ plugins:
 	done
 
 app:: plugins
+
+install:: app
+	mkdir -p $(DESTDIR)$(prefix)
+	mkdir -p /etc/mios
+	cp -R _rel/emqttd $(DESTDIR)$(prefix)/
+	cp init.d/emqttd /etc/init.d/
+	systemctl daemon-reload
+	service emqttd start
+
+uninstall:
+	service emqttd stop
+	rm -rf $(DESTDIR)$(prefix)/emqttd
+	rm -rf /etc/init.d/emqttd
+	rm -rf /etc/mios
+	systemctl daemon-reload
+
+	
 

@@ -2,6 +2,8 @@ PROJECT = emqttd-relx
 PROJECT_DESCRIPTION = Release project for the EMQ Broker
 PROJECT_VERSION = 2.0-mios
 
+prefix = /opt
+
 DEPS = \
 	   emqttd \
 	   emq_dashboard \
@@ -75,4 +77,10 @@ plugins:
 	done
 
 app:: plugins
+
+install:: app
+	@mkdir -p $(DESTDIR)$(prefix)
+	@cp -R _rel/emqttd $(DESTDIR)$(prefix)/
+	@cp init.d/emqttd /etc/init.d/
+
 

@@ -28,7 +28,7 @@ DEPS = \
 	   emq_auth_mios
 
 # emq deps
-dep_emqttd        = git https://github.com/nvelozsavino/emqttd develop
+dep_emqttd        = git https://github.com/nvelozsavino/emqttd master
 dep_emq_dashboard = git https://github.com/emqtt/emq_dashboard master
 dep_emq_recon     = git https://github.com/emqtt/emq_recon master
 dep_emq_reloader  = git https://github.com/emqtt/emq_reloader master

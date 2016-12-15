@@ -79,8 +79,19 @@ plugins:
 app:: plugins
 
 install:: app
-	@mkdir -p $(DESTDIR)$(prefix)
-	@cp -R _rel/emqttd $(DESTDIR)$(prefix)/
-	@cp init.d/emqttd /etc/init.d/
+	mkdir -p $(DESTDIR)$(prefix)
+	mkdir -p /etc/mios
+	cp -R _rel/emqttd $(DESTDIR)$(prefix)/
+	cp init.d/emqttd /etc/init.d/
+	systemctl daemon-reload
+	service emqttd start
 
+uninstall:
+	service emqttd stop
+	rm -rf $(DESTDIR)$(prefix)/emqttd
+	rm -rf /etc/init.d/emqttd
+	rm -rf /etc/mios
+	systemctl daemon-reload
+
+	
 

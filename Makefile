@@ -78,7 +78,7 @@ plugins:
 
 app:: plugins
 
-install:: app
+install:: 
 	mkdir -p $(DESTDIR)$(prefix)
 	mkdir -p /etc/mios
 	cp -R _rel/emqttd $(DESTDIR)$(prefix)/

@@ -90,7 +90,7 @@ uninstall:
 	service emqttd stop
 	rm -rf $(DESTDIR)$(prefix)/emqttd
 	rm -rf /etc/init.d/emqttd
-	rmdir /etc/mios
+	rmdir /etc/mios --ignore-fail-on-non-empty
 	systemctl daemon-reload
 
 	
